@@ -60,7 +60,19 @@ The 13-case evaluation covers standard invoices, split orders, duplicates, overs
 - `reports/combinations.json` — policy, replay, evidence, and invalid-input checks.
 - `docs/testing_guide.md` — repeatable UI test instructions.
 - `docs/problem_brief.md` — problem, architecture, proof, failure analysis, and risks.
-- `docs/ai_use_appendix.md` — AI-use disclosure draft for final personalization.
+- `docs/ai_use_appendix.md` — AI-use disclosure source.
+- `docs/assignment_requirements.md` — requirement-by-requirement submission checklist.
+
+## Submission package
+
+The assignment package is organized as follows:
+
+1. **Written brief:** `docs/problem_brief.pdf` — maximum four pages.
+2. **AI-use appendix:** `docs/ai_use_appendix.pdf` — one page covering AI help, rejected suggestions, candidate decisions, and one defensible design choice.
+3. **Prototype link:** this repository is optional; if shared, the README and `docs/testing_guide.md` explain how to run and test it.
+4. **AI conversation logs:** the assignment requires the actual AI conversation export or archive. `submission/tresata_ai_use_log.zip` contains supporting project AI-use material; attach the platform export as the authoritative transcript.
+
+The full requirement mapping is in `docs/assignment_requirements.md`.
 
 ## Scope and limitations
 

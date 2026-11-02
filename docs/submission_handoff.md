@@ -4,7 +4,7 @@
 
 1. Written brief, maximum four pages.
 2. One-page AI-use appendix, personalized with the candidate’s real prompts, corrections, original decisions, and a point they can defend without tools.
-3. Actual AI conversation export or archive, if requested by the submission form.
+3. Actual AI conversation export or archive, as required by the submission form.
 
 ## Optional prototype
 
