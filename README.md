@@ -52,6 +52,12 @@ py -3.12 -m venv .venv
 
 Open `http://localhost:8501`. No API key is required for the standard workflow or OCR sample.
 
+## Live demo
+
+Open the deployed synthetic-data prototype at [ch23b012-tresata.streamlit.app](https://ch23b012-tresata.streamlit.app/).
+
+The live app is intended for demonstration only. It uses bundled synthetic documents and disposable session state; do not upload confidential or real financial documents.
+
 ## Test evidence
 
 The 13-case evaluation covers standard invoices, split orders, duplicates, overspend, tax-inclusive totals, missing identifiers, OCR, arithmetic errors, unapproved suppliers, and bundled lines. The later-evidence routes cover receipt corrections, credits, condition versions, historical replay, and repeat replay behavior.

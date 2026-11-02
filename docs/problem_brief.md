@@ -4,11 +4,11 @@
 
 An accounts payable analyst can approve an invoice against the purchase order and receiving record available today, then learn tomorrow that the order was amended, the receipt count was corrected, or the supplier issued a credit. The original decision may no longer be valid. The problem here is **keeping payable decisions consistent with changing purchase-to-pay evidence and conditions**.
 
-The intended user is an analyst at a mid-size company processing hundreds of vendor PDFs monthly. The time cost is repeated document reading and rechecking; the error cost is approving more units or money than the company can support with an order and receipt. No measured monetary savings are claimed. The prototype is scoped to one Indian-rupee PO configuration with synthetic suppliers and invoices. It does not send payments, decide tax law, authenticate suppliers, or reconcile bank transactions.
+The intended user is an analyst at a mid-size company processing hundreds of vendor PDFs monthly. The time cost is repeated document reading and rechecking; the error cost is approving more units or money than the company can support with an order and receipt. No measured monetary savings are claimed. **Out of scope:** the prototype is limited to one Indian-rupee PO configuration with synthetic suppliers and invoices; it does not send payments, decide tax law, authenticate suppliers, or reconcile bank transactions.
 
 The surprising design observation is that an invoice decision is not permanent merely because its arithmetic was correct. It is a conclusion over a **version of evidence**. A later receiving correction can turn a prior approval into a review item; a genuine credit can release PO capacity for another invoice. This gives the system a useful job beyond extracting invoice fields.
 
-## 2. Design
+## 2. Solution and architecture
 
 ```text
 Invoice PDF → digital text / local OCR → structured fields + source quotes
@@ -26,7 +26,7 @@ The PDF reader handles digital text and falls back to a pretrained OCR model for
 
 Every decision stores extracted field quotes, document page numbers, linked PO/receipt identifiers, formula inputs, the condition version, reasons and a revision history. The original synthetic PO PDF is visible beside the decision. The Conditions tab lets a reviewer edit order capacity, supplier approval, receipt requirements and tolerances. Saving a version makes it active for new invoices while earlier decisions keep their original policy. The reviewer can separately preview and rerun historical invoices under the saved conditions; a repeated unchanged rerun creates no new revisions. The reference records begin in a small JSON register; condition versions, evidence and decisions live in SQLite. A graph database, autonomous agents and a vector index would add more moving parts without improving these bounded checks.
 
-Human review is required when fields are missing, OCR confidence is low, a PO or item link is ambiguous, the configured tax calculation differs, or received units fall short. A reviewer must upload a supporting PDF, identify themselves and explain a receipt correction or credit event before replay. The app checks that the reference and entered values appear in the PDF and retains its hash. That UI action is an attestation in the prototype; production must verify authenticity and enforce approval authority.
+**Uncertainty and mistakes:** human review is required when fields are missing, OCR confidence is low, a PO or item link is ambiguous, the configured tax calculation differs, or received units fall short. A reviewer must upload a supporting PDF, identify themselves and explain a receipt correction or credit event before replay. The app checks that the reference and entered values appear in the PDF and retains its hash. That UI action is an attestation in the prototype; production must verify authenticity and enforce approval authority.
 
 ## 3. Proof and failure analysis
 
@@ -34,7 +34,7 @@ The prototype processes 13 self-created invoice PDFs, including one rasterized s
 
 These cases prove the **workflow runs**, not that extraction is accurate on the population of vendor invoices. The layouts come from one generator and have clean typography. The bundled-line case has no verifiable quantity or unit price, so the system routes it to review. A real handwritten, multilingual, rotated, or badly scanned invoice may fail earlier. We would measure field-level accuracy and false approval rate on a diverse, manually labeled document set before expanding automation.
 
-Rules-only text matching can handle the known templates but fails when layouts or wording change. A single language-model call could read more formats, but would blur source evidence, arithmetic and policy. The chosen hybrid has the model do perception and candidate extraction, while exact calculations and the final decision remain inspectable. The optional model path is deliberately nonessential: the local OCR and review route work without an API key.
+**Alternatives considered and rejected:** rules-only text matching can handle the known templates but fails when layouts or wording change. A single language-model call could read more formats, but would blur source evidence, arithmetic and policy. AI is useful here for document perception and candidate extraction across unfamiliar layouts; exact calculations and the final decision remain inspectable. The optional model path is deliberately nonessential: the local OCR and review route work without an API key.
 
 ## 4. Risks and next decision
 
