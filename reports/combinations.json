@@ -1,0 +1,14 @@
+{
+  "passed": 471,
+  "failed": 0,
+  "groups": {
+    "capacity_receipt_credit": 392,
+    "event_order": 60,
+    "duplicate_order": 6,
+    "clear_and_restart": 2,
+    "invalid_conditions": 6,
+    "invalid_evidence": 5
+  },
+  "failures": [],
+  "coverage": "Exhaustive within the listed finite grids, not every possible document or numeric input. Identical PDF bytes share cached real extraction; every scenario uses a fresh database. OCR and all 13 layouts are exercised separately by evaluate.py."
+}

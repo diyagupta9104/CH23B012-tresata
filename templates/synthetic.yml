@@ -1,0 +1,13 @@
+issuer: Synthetic invoice
+keywords:
+  - Synthetic training document
+fields:
+  amount: '(?:Grand Total|Amount Due):\s*([0-9,]+\.\d{2})'
+  date: 'Invoice Date:\s*(\d{4}-\d{2}-\d{2})'
+  invoice_number: '(?:Invoice Number|Bill No\.?)\s*:\s*([A-Z0-9\-/]+)'
+  vendor: '(?:Vendor|Supplier):\s*([^\n]+)'
+  po: '(?:Purchase Order|PO Ref):\s*([A-Z0-9\-/]+)'
+options:
+  currency: INR
+  date_formats:
+    - '%Y-%m-%d'

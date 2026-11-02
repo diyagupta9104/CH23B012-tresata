@@ -1,0 +1,145 @@
+[
+  {
+    "file": "01_standard.pdf",
+    "vendor": "Northstar Components",
+    "number": "NC-2601",
+    "po": "PO-1001",
+    "item": "Industrial sensors",
+    "qty": 50,
+    "subtotal": 50000,
+    "tax": 9000,
+    "total": 59000
+  },
+  {
+    "file": "02_split_order.pdf",
+    "vendor": "Northstar Components",
+    "number": "NC-2602",
+    "po": "PO-1001",
+    "item": "Industrial sensors",
+    "qty": 50,
+    "subtotal": 50000,
+    "tax": 9000,
+    "total": 59000
+  },
+  {
+    "file": "03_duplicate.pdf",
+    "vendor": "Northstar Components",
+    "number": "NC-2601",
+    "po": "PO-1001",
+    "item": "Industrial sensors",
+    "qty": 50,
+    "subtotal": 50000,
+    "tax": 9000,
+    "total": 59000
+  },
+  {
+    "file": "04_freight_first.pdf",
+    "vendor": "Harbor Logistics",
+    "number": "HL-4101",
+    "po": "PO-1002",
+    "item": "Freight pallets",
+    "qty": 150,
+    "subtotal": 150000,
+    "tax": 27000,
+    "total": 177000
+  },
+  {
+    "file": "05_freight_overspend.pdf",
+    "vendor": "Harbor Logistics",
+    "number": "HL-4102",
+    "po": "PO-1002",
+    "item": "Freight pallets",
+    "qty": 75,
+    "subtotal": 75000,
+    "tax": 13500,
+    "total": 88500
+  },
+  {
+    "file": "06_tax_inclusive.pdf",
+    "vendor": "Cedar Office Supply",
+    "number": "CO-3001",
+    "po": "PO-1003",
+    "item": "Desk chairs",
+    "qty": 20,
+    "subtotal": 20000,
+    "tax": 3600,
+    "total": 23600
+  },
+  {
+    "file": "07_missing_po.pdf",
+    "vendor": "Harbor Logistics",
+    "number": "HL-4103",
+    "po": null,
+    "item": "Packaging cartons",
+    "qty": 10,
+    "subtotal": 10000,
+    "tax": 1800,
+    "total": 11800
+  },
+  {
+    "file": "08_missing_number.pdf",
+    "vendor": "Harbor Logistics",
+    "number": null,
+    "po": "PO-1005",
+    "item": "Packaging cartons",
+    "qty": 10,
+    "subtotal": 10000,
+    "tax": 1800,
+    "total": 11800
+  },
+  {
+    "file": "09_receipt_recheck.pdf",
+    "vendor": "Cedar Office Supply",
+    "number": "CO-3002",
+    "po": "PO-1003",
+    "item": "Desk chairs",
+    "qty": 25,
+    "subtotal": 25000,
+    "tax": 4500,
+    "total": 29500
+  },
+  {
+    "file": "10_unapproved_vendor.pdf",
+    "vendor": "Orion Cloud Services",
+    "number": "OC-9001",
+    "po": null,
+    "item": "Cloud storage",
+    "qty": 5,
+    "subtotal": 5000,
+    "tax": 900,
+    "total": 5900
+  },
+  {
+    "file": "11_scanned_invoice.pdf",
+    "vendor": "Northstar Components",
+    "number": "NC-2603",
+    "po": "PO-1004",
+    "item": "Sensor calibration kits",
+    "qty": 20,
+    "subtotal": 20000,
+    "tax": 3600,
+    "total": 23600
+  },
+  {
+    "file": "12_arithmetic_error.pdf",
+    "vendor": "Harbor Logistics",
+    "number": "HL-5101",
+    "po": "PO-1005",
+    "item": "Packaging cartons",
+    "qty": 10,
+    "subtotal": 10000,
+    "tax": 1800,
+    "total": 12800
+  },
+  {
+    "file": "13_bundled_line.pdf",
+    "vendor": "Harbor Logistics",
+    "number": "HL-5102",
+    "po": "PO-1005",
+    "item": "Packaging cartons",
+    "qty": 10,
+    "subtotal": 10000,
+    "tax": 1800,
+    "total": 11800
+  }
+]

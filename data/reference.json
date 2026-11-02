@@ -1,0 +1,28 @@
+{
+  "currency": "INR",
+  "policy": {
+    "vendor_match_min": 85,
+    "vendor_auto_approve_min": 98,
+    "item_match_min": 80,
+    "item_auto_approve_min": 95,
+    "ocr_average_min": 0.88,
+    "ocr_line_min": 0.92,
+    "tax_tolerance": "1.00",
+    "po_amount_tolerance": "0.01",
+    "unit_price_tolerance": "0.01",
+    "line_amount_tolerance": "0.01"
+  },
+  "vendors": [
+    {"id": "V-101", "name": "Northstar Components", "approved": true},
+    {"id": "V-102", "name": "Harbor Logistics", "approved": true},
+    {"id": "V-103", "name": "Cedar Office Supply", "approved": true},
+    {"id": "V-104", "name": "Orion Cloud Services", "approved": false}
+  ],
+  "purchase_orders": [
+    {"id": "PO-1001", "vendor_id": "V-101", "currency": "INR", "subtotal": "100000.00", "tax_rate": "0.18", "receipt_required": true, "items": [{"description": "Industrial sensors", "quantity": "100", "unit_price": "1000.00"}], "receipts": [{"id": "GRN-1001", "quantity": "100", "source": "Synthetic receiving log, 2026-10-20"}]},
+    {"id": "PO-1002", "vendor_id": "V-102", "currency": "INR", "subtotal": "200000.00", "tax_rate": "0.18", "receipt_required": true, "items": [{"description": "Freight pallets", "quantity": "200", "unit_price": "1000.00"}], "receipts": [{"id": "GRN-1002", "quantity": "200", "source": "Synthetic receiving log, 2026-10-21"}]},
+    {"id": "PO-1003", "vendor_id": "V-103", "currency": "INR", "subtotal": "50000.00", "tax_rate": "0.18", "receipt_required": true, "items": [{"description": "Desk chairs", "quantity": "50", "unit_price": "1000.00"}], "receipts": [{"id": "GRN-1003", "quantity": "50", "source": "Synthetic receiving log, 2026-10-22"}]},
+    {"id": "PO-1004", "vendor_id": "V-101", "currency": "INR", "subtotal": "120000.00", "tax_rate": "0.18", "receipt_required": true, "items": [{"description": "Sensor calibration kits", "quantity": "120", "unit_price": "1000.00"}], "receipts": [{"id": "GRN-1004", "quantity": "120", "source": "Synthetic receiving log, 2026-10-22"}]},
+    {"id": "PO-1005", "vendor_id": "V-102", "currency": "INR", "subtotal": "80000.00", "tax_rate": "0.18", "receipt_required": true, "items": [{"description": "Packaging cartons", "quantity": "80", "unit_price": "1000.00"}], "receipts": [{"id": "GRN-1005", "quantity": "80", "source": "Synthetic receiving log, 2026-10-22"}]}
+  ]
+}
